@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Output report (dihasilkan otomatis oleh skrip)
+recon_report.md
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/

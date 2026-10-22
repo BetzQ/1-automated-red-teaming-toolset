@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nmaprun scanner="nmap" args="nmap -sV -oX sample_nmap_scan.xml 192.168.1.10" start="1700000000" startstr="Thu Nov 15 10:00:00 2023" version="7.93" xmloutputversion="1.05">
+  <scaninfo type="syn" protocol="tcp" numservices="1000" services="1-1000"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  <target>
+    <target addr="192.168.1.10"/>
+  </target>
+  <host starttime="1700000000" endtime="1700000010">
+    <status state="up" reason="syn-ack" reason_ttl="64"/>
+    <address addr="192.168.1.10" addrtype="ipv4"/>
+    <hostnames>
+      <hostname name="target.local" type="PTR"/>
+    </hostnames>
+    <ports>
+      <extraports state="closed" count="996"/>
+      <port protocol="tcp" portid="22">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="ssh" product="OpenSSH" version="7.2p2" extrainfo="Ubuntu 4ubuntu2.8" method="probed" conf="10"/>
+      </port>
+      <port protocol="tcp" portid="80">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="http" product="Apache httpd" version="2.4.41" extrainfo="Ubuntu" method="probed" conf="10"/>
+      </port>
+      <port protocol="tcp" portid="445">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="microsoft-ds" product="Samba" version="4.7.6-Ubuntu" method="probed" conf="10"/>
+      </port>
+      <port protocol="tcp" portid="3306">
+        <state state="open" reason="syn-ack" reason_ttl="64"/>
+        <service name="mysql" product="MySQL" version="8.0.33" extrainfo="0" method="probed" conf="10"/>
+      </port>
+    </ports>
+    <times srtt="1234" rttvar="5000" to="100000"/>
+  </host>
+  <runstats>
+    <finished time="1700000010" elapsed="10.00" summary="Nmap done at Thu Nov 15 10:00:10 2023; 1 IP address (1 host up) scanned in 10.00 seconds" exit="success"/>
+    <hosts up="1" down="0" total="1"/>
+  </runstats>
+</nmaprun>
